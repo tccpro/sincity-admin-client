@@ -52,14 +52,16 @@
 
 .gridBox:hover {
     transition: .3s;
-    box-shadow: -1px 0px 20px #fff;
+    box-shadow: -1px 0px 20px #ffffff30;
 }
 
 .rounded {
     border-radius: 5px;
     overflow: hidden;
 }
-
+.mobile-show {
+    display: none !important;
+}
 .content-box {
     height: 100%;
 }
@@ -82,9 +84,16 @@ select.option-black:not([multiple]) option {
     padding: 36px 8px;
 }
 
+
 @media screen and (max-width: 750px) {
     .padding {
         padding: 24px 8px;
     }   
+    .mobile-show {
+        display: block !important;
+    }
+    .mobile-hide {
+        display: none !important;
+    }
 }
 

@@ -73,14 +73,13 @@ export const ProductCard = ({ product, ...rest }) => (
             display: 'flex'
           }}
         >
-          <ClockIcon color="action" />
-          <Typography
+          Price : <Typography
             color="textSecondary"
             display="inline"
             sx={{ pl: 1 }}
             variant="body2"
           >
-            Updated 2hr ago
+            ${product.price}
           </Typography>
         </Grid>
         <Grid
@@ -90,16 +89,15 @@ export const ProductCard = ({ product, ...rest }) => (
             display: 'flex'
           }}
         >
-          <DownloadIcon color="action" />
+          Stock: 
           <Typography
             color="textSecondary"
             display="inline"
             sx={{ pl: 1 }}
             variant="body2"
           >
-            {product.totalDownloads}
+            {product.stock}
             {' '}
-            Downloads
           </Typography>
         </Grid>
       </Grid>

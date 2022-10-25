@@ -9,63 +9,57 @@ import {
   Typography
 } from '@mui/material';
 
-const user = {
-  avatar: 'http://localhost:3331/img/img(1).png',
-  city: 'Los Angeles',
-  country: 'USA',
-  jobTitle: 'Senior Developer',
-  name: 'Daniel Ramirez',
-  timezone: 'GTM-7'
-};
-
-export const ProductImage = (props) => (
-  <Card {...props}  className='bg-black gridBox'>
-    <CardContent  className='content-box'>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        <Avatar
-          src={user.avatar}
+export const ProductImage = (props) => {
+  const { productInfo } = props;
+  return (
+    <Card {...props}  className='bg-black gridBox'>
+      <CardContent  className='content-box'>
+        <Box
           sx={{
-            height: "100%",
-            mb: 2,
-            width: "100%",
-            borderRadius: "5px"
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column'
           }}
-        />
-        <Typography
-          color="textPrimary"
-          gutterBottom
-          variant="h5"
         >
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
+          <Avatar
+            src={productInfo.media}
+            sx={{
+              height: "100%",
+              mb: 2,
+              width: "100%",
+              borderRadius: "5px"
+            }}
+          />
+          <Typography
+            color="textPrimary"
+            gutterBottom
+            variant="h5"
+          >
+          </Typography>
+          <Typography
+            color="textSecondary"
+            variant="body2"
+          >
+           
+          </Typography>
+          <Typography
+            color="textSecondary"
+            variant="body2"
+          >
+           
+          </Typography>
+        </Box>
+      </CardContent>
+      <Divider />
+      <CardActions>
+        <Button
+          color="primary"
+          fullWidth
+          variant="text"
         >
-         
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
-         
-        </Typography>
-      </Box>
-    </CardContent>
-    <Divider />
-    <CardActions>
-      <Button
-        color="primary"
-        fullWidth
-        variant="text"
-      >
-        Upload picture
-      </Button>
-    </CardActions>
-  </Card>
-);
+          Upload picture
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}

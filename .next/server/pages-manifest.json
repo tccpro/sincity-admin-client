@@ -3,8 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/products": "pages/products.js",
-  "/customers/[id]": "pages/customers/[id].js",
-  "/products/[id]": "pages/products/[id].js",
-  "/webinars/create": "pages/webinars/create.js",
-  "/webinars": "pages/webinars.js"
+  "/customers": "pages/customers.js"
 }

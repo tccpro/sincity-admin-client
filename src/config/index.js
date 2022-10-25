@@ -1,3 +1,3 @@
 export const config = {
-    serverDomain: "http://localhost:3331"
+    serverDomain: "http://192.168.104.107:3331"
 }

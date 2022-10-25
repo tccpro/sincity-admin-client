@@ -3,7 +3,7 @@ import { Avatar, Box, Card, CardContent, Divider, Grid, Typography } from '@mui/
 import { Clock as ClockIcon } from '../../icons/clock';
 import { Download as DownloadIcon } from '../../icons/download';
 
-export const ProductCard = ({ product, ...rest }) => (
+export const ProductCard = ({ product, status, ...rest }) => (
   <Card  className='bg-black gridBox'
     sx={{
       display: 'flex',
@@ -60,48 +60,35 @@ export const ProductCard = ({ product, ...rest }) => (
     </CardContent>
     <Box sx={{ flexGrow: 1 }} />
     <Divider />
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: 3,  }}>
       <Grid
         container
         spacing={2}
         sx={{ justifyContent: 'space-between' }}
       >
-        <Grid
-          item
-          sx={{
-            alignItems: 'center',
-            display: 'flex'
-          }}
-        >
-          <ClockIcon color="action" />
-          <Typography
-            color="textSecondary"
-            display="inline"
-            sx={{ pl: 1 }}
-            variant="body2"
+        { status == 'upcoming' &&
+          <Grid
+            container
+            spacing={2}
           >
-            Updated 2hr ago
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            alignItems: 'center',
-            display: 'flex'
-          }}
-        >
-          <DownloadIcon color="action" />
-          <Typography
-            color="textSecondary"
-            display="inline"
-            sx={{ pl: 1 }}
-            variant="body2"
-          >
-            {product.totalDownloads}
-            {' '}
-            Downloads
-          </Typography>
-        </Grid>
+            <Grid
+              item
+              style={{
+                display: "flex",
+                justifyContent: "space-between"
+              }}
+            >
+              <Typography
+                align="center"
+                color="textPrimary"
+                gutterBottom
+                variant="h5"
+              >
+                High theme
+              </Typography>
+            </Grid>
+          </Grid>
+        }
       </Grid>
     </Box>
   </Card>

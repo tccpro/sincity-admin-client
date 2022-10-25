@@ -1,0 +1,1 @@
+{"c":["pages/_app","webpack"],"r":["pages/settings"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=D%3A%5CDevProcess%5CSinCity%5Csincity-client-admin%5Csrc%5Cpages%5Csettings.js&page=%2Fsettings!","./src/components/settings/settings-notifications.js","./src/components/settings/settings-password.js","./src/pages/settings.js"]}

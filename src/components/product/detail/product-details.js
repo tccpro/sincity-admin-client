@@ -48,6 +48,7 @@ const statuses = [
 ]
 
 export const ProductDetailProfile = (props) => {
+
   const [values, setValues] = useState({
     title: '',
     desciption: '',
@@ -59,6 +60,8 @@ export const ProductDetailProfile = (props) => {
     stock: 34,
     status: 'Active'
   });
+  
+  const { productInfo } = props;
 
   const handleChange = (event) => {
     setValues({
@@ -93,7 +96,7 @@ export const ProductDetailProfile = (props) => {
                 helperText="Please specify the title"
                 label="Title"
                 name="title"
-                defaultValue="Product Title"
+                defaultValue={productInfo.title}
                 onChange={handleChange}
                 required
                 variant="outlined"
@@ -112,7 +115,7 @@ export const ProductDetailProfile = (props) => {
                 required
                 select
                 SelectProps={{ native: true }}
-                value={values.category}
+                defaultChecked={productInfo.category}
                 variant="outlined"
                 className='option-black'
               >
@@ -139,10 +142,9 @@ export const ProductDetailProfile = (props) => {
                 label="Description"
                 name="description"
                 type="textarea"
-                defaultValue="Product Description"
+                defaultValue={productInfo.description}
                 onChange={handleChange}
                 required
-                value={values.email}
                 variant="outlined"
               />
             </Grid>
@@ -159,7 +161,7 @@ export const ProductDetailProfile = (props) => {
                 type="nubmer"
                 required
                 variant="outlined"
-                defaultValue={200}
+                defaultValue={productInfo.price}
               />
             </Grid>
             <Grid
@@ -189,7 +191,7 @@ export const ProductDetailProfile = (props) => {
                 onChange={handleChange}
                 type="nubmer"
                 variant="outlined"
-                defaultValue={20}
+                defaultValue={productInfo.stock}
               />
             </Grid>
             <Grid
@@ -204,7 +206,7 @@ export const ProductDetailProfile = (props) => {
                 onChange={handleChange}
                 select
                 SelectProps={{ native: true }}
-                defaultValue="draft"
+                defaultValue={productInfo.status}
                 variant="outlined"
                 className='option-black'
               >
@@ -232,7 +234,7 @@ export const ProductDetailProfile = (props) => {
                 name="manufacture"
                 required
                 variant="outlined"
-                defaultValue="Manufacture"
+                defaultValue={productInfo.manufacture}
               />
             </Grid>
             <Grid

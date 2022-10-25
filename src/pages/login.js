@@ -37,7 +37,7 @@ const Login = () => {
       <Head>
         <title>Login | Sincity</title>
       </Head>
-      <Box
+      <Box  className='box-black'
         component="main"
         sx={{
           alignItems: 'center',
@@ -46,7 +46,8 @@ const Login = () => {
           minHeight: '100%'
         }}
       >
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" 
+        className='bg-black gridBox rounded padding'>
           <NextLink
             href="/"
             passHref

@@ -2,8 +2,8 @@ import { Avatar, Card, CardContent, Grid, Typography } from '@mui/material';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 export const TotalProfit = (props) => (
-  <Card {...props}>
-    <CardContent>
+  <Card {...props}  className='bg-black gridBox'>
+    <CardContent  className='bg-black content-box'>
       <Grid
         container
         spacing={3}

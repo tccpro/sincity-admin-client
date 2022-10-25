@@ -16,13 +16,13 @@ export const SettingsPassword = (props) => {
 
   return (
     <form {...props}>
-      <Card>
+      <Card  className='bg-black gridBox'>
         <CardHeader
           subheader="Update password"
           title="Password"
         />
         <Divider />
-        <CardContent>
+        <CardContent  className='content-box'>
           <TextField
             fullWidth
             label="Password"

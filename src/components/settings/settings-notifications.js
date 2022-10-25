@@ -13,13 +13,13 @@ import {
 
 export const SettingsNotifications = (props) => (
   <form {...props}>
-    <Card>
+    <Card  className='bg-black gridBox'>
       <CardHeader
         subheader="Manage the notifications"
         title="Notifications"
       />
       <Divider />
-      <CardContent>
+      <CardContent  className='content-box'>
         <Grid
           container
           spacing={6}

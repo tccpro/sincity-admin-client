@@ -64,10 +64,10 @@ export const TrafficByDevice = (props) => {
   ];
 
   return (
-    <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+    <Card {...props}  className='bg-black gridBox'>
+      <CardHeader title="Traffic by Device"   className='bg-black gridBox'/>
       <Divider />
-      <CardContent>
+      <CardContent  className='content-box'>
         <Box
           sx={{
             height: 300,

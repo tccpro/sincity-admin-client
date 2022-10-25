@@ -11,6 +11,7 @@ const Page = () => (
       </title>
     </Head>
     <Box
+      className='box-black'
       component="main"
       sx={{
         alignItems: 'center',

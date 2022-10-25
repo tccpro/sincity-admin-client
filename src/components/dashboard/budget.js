@@ -3,11 +3,11 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import MoneyIcon from '@mui/icons-material/Money';
 
 export const Budget = (props) => (
-  <Card
+  <Card  className='bg-black gridBox'
     sx={{ height: '100%' }}
     {...props}
   >
-    <CardContent>
+    <CardContent  className='bg-black gridBox content-box'>
       <Grid
         container
         spacing={3}

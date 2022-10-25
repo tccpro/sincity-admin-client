@@ -2,11 +2,11 @@ import { Avatar, Box, Card, CardContent, Grid, LinearProgress, Typography } from
 import InsertChartIcon from '@mui/icons-material/InsertChartOutlined';
 
 export const TasksProgress = (props) => (
-  <Card
+  <Card  className='bg-black gridBox'
     sx={{ height: '100%' }}
     {...props}
   >
-    <CardContent>
+    <CardContent className='content-box'>
       <Grid
         container
         spacing={3}

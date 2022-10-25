@@ -163,7 +163,7 @@ export const theme = createTheme({
       contrastText: '#FFFFFF'
     },
     secondary: {
-      main: '#10B981',
+      main: '#AC7A2B',
       light: '#3FC79A',
       dark: '#0B815A',
       contrastText: '#FFFFFF'
@@ -193,7 +193,7 @@ export const theme = createTheme({
       contrastText: '#FFFFFF'
     },
     text: {
-      primary: '#121828',
+      primary: '#fff',
       secondary: '#ccc',
       disabled: 'rgba(55, 65, 81, 0.48)',
       white: "#efefef",
@@ -201,7 +201,7 @@ export const theme = createTheme({
     }
   },
   shape: {
-    borderRadius: 8
+    borderRadius: 5
   },
   shadows: [
     'none',

@@ -49,7 +49,7 @@ const products = [
 ];
 
 export const LatestProducts = (props) => (
-  <Card {...props}>
+  <Card {...props}  className='bg-black gridBox'>
     <CardHeader
       subtitle={`${products.length} in total`}
       title="Latest Products"
@@ -58,6 +58,7 @@ export const LatestProducts = (props) => (
     <List>
       {products.map((product, i) => (
         <ListItem
+          className='bg-black'
           divider={i < products.length - 1}
           key={product.id}
         >

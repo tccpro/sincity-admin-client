@@ -3,8 +3,8 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import PeopleIcon from '@mui/icons-material/PeopleOutlined';
 
 export const TotalCustomers = (props) => (
-  <Card {...props}>
-    <CardContent>
+  <Card {...props}  className='bg-black gridBox'>
+    <CardContent  className='bg-black gridBox content-box'>
       <Grid
         container
         spacing={3}

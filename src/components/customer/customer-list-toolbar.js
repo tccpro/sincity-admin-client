@@ -10,10 +10,19 @@ import {
 import { Search as SearchIcon } from '../../icons/search';
 import { Upload as UploadIcon } from '../../icons/upload';
 import { Download as DownloadIcon } from '../../icons/download';
+import Router from 'next/router';
+
+const redirectToCreatePage = () => {
+  
+  Router
+  .push('/customers/create')
+  // .catch(console.error);
+
+}
 
 export const CustomerListToolbar = (props) => (
   <Box {...props}>
-    <Box
+    <Box 
       sx={{
         alignItems: 'center',
         display: 'flex',
@@ -44,14 +53,15 @@ export const CustomerListToolbar = (props) => (
         <Button
           color="primary"
           variant="contained"
+          onClick={() => redirectToCreatePage()}
         >
           Add Customers
         </Button>
       </Box>
     </Box>
     <Box sx={{ mt: 3 }}>
-      <Card>
-        <CardContent>
+      <Card  className='bg-black gridBox'>
+        <CardContent  className='content-box'>
           <Box sx={{ maxWidth: 500 }}>
             <TextField
               fullWidth

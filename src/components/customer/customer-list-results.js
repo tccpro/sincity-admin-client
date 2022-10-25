@@ -16,6 +16,9 @@ import {
   Typography
 } from '@mui/material';
 import { getInitials } from '../../utils/get-initials';
+import { Route } from '@mui/icons-material';
+import Router from 'next/router';
+
 
 export const CustomerListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -62,23 +65,19 @@ export const CustomerListResults = ({ customers, ...rest }) => {
     setPage(newPage);
   };
 
+  const gotoDetailPage = (id) => {
+    Router.push(`/customers/${id}`);
+  }
+
   return (
-    <Card {...rest}>
+    <Card {...rest}  className='bg-black gridBox'>
       <PerfectScrollbar>
         <Box sx={{ minWidth: 1050 }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell padding="checkbox">
-                  <Checkbox
-                    checked={selectedCustomerIds.length === customers.length}
-                    color="primary"
-                    indeterminate={
-                      selectedCustomerIds.length > 0
-                      && selectedCustomerIds.length < customers.length
-                    }
-                    onChange={handleSelectAll}
-                  />
+                <TableCell>
+                  
                 </TableCell>
                 <TableCell>
                   Name
@@ -98,18 +97,18 @@ export const CustomerListResults = ({ customers, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {customers.slice(0, limit).map((customer) => (
+              {customers.slice(0, limit).map((customer, index) => (
                 <TableRow
                   hover
                   key={customer.id}
                   selected={selectedCustomerIds.indexOf(customer.id) !== -1}
+                  onClick={()=>{gotoDetailPage(customer.id)}}
+                  style={{
+                    cursor: "pointer"
+                  }}
                 >
-                  <TableCell padding="checkbox">
-                    <Checkbox
-                      checked={selectedCustomerIds.indexOf(customer.id) !== -1}
-                      onChange={(event) => handleSelectOne(event, customer.id)}
-                      value="true"
-                    />
+                  <TableCell >
+                    {index + 1}
                   </TableCell>
                   <TableCell>
                     <Box

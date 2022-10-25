@@ -81,7 +81,7 @@ const orders = [
 ];
 
 export const LatestOrders = (props) => (
-  <Card {...props}>
+  <Card {...props}  className='bg-black gridBox'>
     <CardHeader title="Latest Orders" />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>

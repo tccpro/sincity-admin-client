@@ -2,8 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/sign-in/confirm": "pages/sign-in/confirm.js",
-  "/": "pages/index.js",
-  "/sign-in": "pages/sign-in.js"
+  "/products": "pages/products.js",
+  "/customers/[id]": "pages/customers/[id].js",
+  "/products/[id]": "pages/products/[id].js",
+  "/webinars/create": "pages/webinars/create.js",
+  "/webinars": "pages/webinars.js"
 }

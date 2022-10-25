@@ -11,6 +11,12 @@ import {
 import { Download as DownloadIcon } from '../../icons/download';
 import { Search as SearchIcon } from '../../icons/search';
 import { Upload as UploadIcon } from '../../icons/upload';
+import Router from 'next/router';
+
+
+const gotoCreateProductPage = () => {
+  Router.push('/products/create');
+}
 
 export const ProductListToolbar = (props) => (
   <Box {...props}>
@@ -45,14 +51,25 @@ export const ProductListToolbar = (props) => (
         <Button
           color="primary"
           variant="contained"
+          // onClick={()=>{gotoCreateProductPage()}}
+          style={{
+            marginRight: 15
+          }}
+        >
+          Add category
+        </Button>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={()=>{gotoCreateProductPage()}}
         >
           Add products
         </Button>
       </Box>
     </Box>
     <Box sx={{ mt: 3 }}>
-      <Card>
-        <CardContent>
+      <Card  className='bg-black gridBox'>
+        <CardContent  className='content-box'>
           <Box sx={{ maxWidth: 500 }}>
             <TextField
               fullWidth

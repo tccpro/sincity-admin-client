@@ -14,10 +14,11 @@
   },
   "dependencies": {
     "@emotion/cache": "11.10.3",
-    "@emotion/react": "11.10.4",
+    "@emotion/react": "^11.10.4",
     "@emotion/server": "11.10.0",
-    "@emotion/styled": "11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "5.10.3",
+    "@mui/joy": "^5.0.0-alpha.50",
     "@mui/lab": "5.0.0-alpha.99",
     "@mui/material": "5.10.5",
     "@mui/system": "5.10.5",
@@ -37,6 +38,7 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
+    "@types/node": "18.11.4",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0"
   }

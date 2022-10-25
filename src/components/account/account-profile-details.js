@@ -10,28 +10,17 @@ import {
   TextField
 } from '@mui/material';
 
-const states = [
-  {
-    value: 'alabama',
-    label: 'Alabama'
-  },
-  {
-    value: 'new-york',
-    label: 'New York'
-  },
-  {
-    value: 'san-francisco',
-    label: 'San Francisco'
-  }
-];
+const states = [{"label":"Alabama","value":"AL"},{"label":"Alaska","value":"AK"},{"label":"Arizona","value":"AZ"},{"label":"Arkansas","value":"AR"},{"label":"California","value":"CA"},{"label":"Colorado","value":"CO"},{"label":"Connecticut","value":"CT"},{"label":"Delaware","value":"DE"},{"label":"Florida","value":"FL"},{"label":"Georgia","value":"GA"},{"label":"Hawaii","value":"HI"},{"label":"Idaho","value":"ID"},{"label":"Illinois","value":"IL"},{"label":"Indiana","value":"IN"},{"label":"Iowa","value":"IA"},{"label":"Kansas","value":"KS"},{"label":"Kentucky","value":"KY"},{"label":"Louisiana","value":"LA"},{"label":"Maine","value":"ME"},{"label":"Maryland","value":"MD"},{"label":"Massachusetts","value":"MA"},{"label":"Michigan","value":"MI"},{"label":"Minnesota","value":"MN"},{"label":"Mississippi","value":"MS"},{"label":"Missouri","value":"MO"},{"label":"Montana","value":"MT"},{"label":"Nebraska","value":"NE"},{"label":"Nevada","value":"NV"},{"label":"New Hampshire","value":"NH"},{"label":"New Jersey","value":"NJ"},{"label":"New Mexico","value":"NM"},{"label":"New York","value":"NY"},{"label":"North Carolina","value":"NC"},{"label":"North Dakota","value":"ND"},{"label":"Ohio","value":"OH"},{"label":"Oklahoma","value":"OK"},{"label":"Oregon","value":"OR"},{"label":"Pennsylvania","value":"PA"},{"label":"Rhode Island","value":"RI"},{"label":"South Carolina","value":"SC"},{"label":"South Dakota","value":"SD"},{"label":"Tennessee","value":"TN"},{"label":"Texas","value":"TX"},{"label":"Utah","value":"UT"},{"label":"Vermont","value":"VT"},{"label":"Virginia","value":"VA"},{"label":"Washington","value":"WA"},{"label":"West Virginia","value":"WV"},{"label":"Wisconsin","value":"WI"},{"label":"Wyoming","value":"WY"}];
 
 export const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
+    firstName: 'Daniel',
+    lastName: 'Ramirez',
     email: 'demo@devias.io',
     phone: '',
-    state: 'Alabama',
+    city: 'Austin',
+    address: '3099 Brentwood Drive',
+    stateCode: 'TX',
     country: 'USA'
   });
 
@@ -48,13 +37,13 @@ export const AccountProfileDetails = (props) => {
       noValidate
       {...props}
     >
-      <Card>
+      <Card className='bg-black gridBox'>
         <CardHeader
           subheader="The information can be edited"
           title="Profile"
         />
         <Divider />
-        <CardContent>
+        <CardContent className='content-box'>
           <Grid
             container
             spacing={3}
@@ -115,7 +104,7 @@ export const AccountProfileDetails = (props) => {
                 label="Phone Number"
                 name="phone"
                 onChange={handleChange}
-                type="number"
+                type="text"
                 value={values.phone}
                 variant="outlined"
               />
@@ -129,9 +118,8 @@ export const AccountProfileDetails = (props) => {
                 fullWidth
                 label="Country"
                 name="country"
-                onChange={handleChange}
                 required
-                value={values.country}
+                value={'USA'}
                 variant="outlined"
               />
             </Grid>
@@ -148,18 +136,50 @@ export const AccountProfileDetails = (props) => {
                 required
                 select
                 SelectProps={{ native: true }}
-                value={values.state}
+                value={values.stateCode}
                 variant="outlined"
+                className='option-black'
               >
                 {states.map((option) => (
                   <option
                     key={option.value}
                     value={option.value}
+                    style={{
+                      backgroundColor: "#0f0f0f"
+                    }}
                   >
                     {option.label}
                   </option>
                 ))}
               </TextField>
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="City"
+                name="city"
+                required
+                value={values.city}
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Address"
+                name="address"
+                required
+                value={values.address}
+                variant="outlined"
+              />
             </Grid>
           </Grid>
         </CardContent>
@@ -175,7 +195,7 @@ export const AccountProfileDetails = (props) => {
             color="primary"
             variant="contained"
           >
-            Save details
+            Create
           </Button>
         </Box>
       </Card>

@@ -30,7 +30,11 @@ export const DashboardNavbar = (props) => {
             lg: 'calc(100% - 280px)'
           }
         }}
-        {...other}>
+        {...other}
+        style={{
+          backgroundColor: "#121212"
+        }}
+        >
         <Toolbar
           disableGutters
           sx={{
@@ -81,7 +85,7 @@ export const DashboardNavbar = (props) => {
               width: 40,
               ml: 1
             }}
-            src="/static/images/avatars/avatar_1.png"
+            src="/static/images/avatars/admin.png"
           >
             <UserCircleIcon fontSize="small" />
           </Avatar>

@@ -82,8 +82,8 @@ export const Sales = (props) => {
   };
 
   return (
-    <Card {...props}>
-      <CardHeader
+    <Card {...props}  className='bg-black gridBox'>
+      <CardHeader  className='content-box'
         action={(
           <Button
             endIcon={<ArrowDropDownIcon fontSize="small" />}

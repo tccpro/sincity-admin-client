@@ -69,6 +69,7 @@ export const AccountPopover = (props) => {
           py: 1.5,
           px: 2
         }}
+        className='bg-black gridBox'
       >
         <Typography variant="overline">
           Account
@@ -77,10 +78,10 @@ export const AccountPopover = (props) => {
           color="text.secondary"
           variant="body2"
         >
-          John Doe
+          Daniel Ramirez
         </Typography>
       </Box>
-      <MenuList
+      <MenuList className='bg-black'
         disablePadding
         sx={{
           '& > *': {
@@ -93,7 +94,7 @@ export const AccountPopover = (props) => {
           }
         }}
       >
-        <MenuItem onClick={handleSignOut}>
+        <MenuItem onClick={handleSignOut} className=''>
           Sign out
         </MenuItem>
       </MenuList>

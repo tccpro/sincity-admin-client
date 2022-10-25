@@ -5,12 +5,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, FormHelperText, Grid, Tab, Tabs, TextField, Typography } from '@mui/material';
 import { auth, ENABLE_AUTH } from '../../lib/auth';
-import { Logo } from '../../components/logo';
 import { useAuthContext } from '../../contexts/auth-context';
 import Router from 'next/router';
 
 const Page = () => {
-  const [tab, setTab] = useState('email');
   const [emailSent, setEmailSent] = useState(false);
   const authContext = useAuthContext();
   const formik = useFormik({
@@ -57,13 +55,26 @@ const Page = () => {
     }
   });
 
-  const handleTabChange = (event, value) => {
-    setTab(value);
-  };
-
   const handleRetry = () => {
     setEmailSent(false);
   };
+
+  const handleSkip = () => {
+    // Since skip is requested, we set a fake user as authenticated
+    const user = {};
+
+    // Update Auth Context state
+    authContext.signIn(user);
+
+    // Persist the skip for AuthProvider initialize call
+    globalThis.sessionStorage.setItem('skip-auth', 'true');
+
+    // Redirect to home page
+    Router
+      .push('/')
+      .catch(console.error);
+  };
+
 
   return (
     <>
@@ -251,7 +262,8 @@ const Page = () => {
                         fullWidth
                         size="large"
                         sx={{ mt: 3 }}
-                        onClick={() => formik.handleSubmit()}
+                        // onClick={() => formik.handleSubmit()}
+                        onClick={() => handleSkip()}
                         variant="contained"
                       >
                         Continue
